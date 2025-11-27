@@ -11,7 +11,6 @@ public class ContactFormValidator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Input
         System.out.print("Enter Name: ");
         String name = sc.nextLine();
 
@@ -20,17 +19,13 @@ public class ContactFormValidator {
 
         System.out.print("Enter Phone Number: ");
         String phone = sc.nextLine();
-
-        // Validate Name
-        // Starts with a capital letter + only letters or spaces
+        
         if (name.matches("[A-Z][a-zA-Z ]*")) {
             System.out.println("Name is VALID");
         } else {
             System.out.println("Name is INVALID (Must start with capital letter and contain only letters/spaces)");
         }
 
-        // Validate Email
-        // Contains @ and . but not starting/ending with them
         if (email.contains("@") && email.contains(".") &&
             !email.startsWith("@") && !email.startsWith(".") &&
             !email.endsWith("@") && !email.endsWith(".")) {
@@ -38,9 +33,6 @@ public class ContactFormValidator {
         } else {
             System.out.println("Email is INVALID");
         }
-
-        // Validate Phone Number
-        // Exactly 10 digits
         if (phone.matches("\\d{10}")) {
             System.out.println("Phone Number is VALID");
         } else {
@@ -50,3 +42,4 @@ public class ContactFormValidator {
         sc.close();
     }
 }
+
